@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0072)https://www.baustroonline.com/frmInicioWebPersona.aspx?Permiso=524102521 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=9"><meta name="referrer" content="always"><title>
+	Ingreso de Persona - Banco del Austro
+</title><link href="./StylesWeb.css" type="text/css" rel="STYLESHEET">
+    <script type="text/javascript" src="https://recursos.bancodelaustro.com/requestserver/script/v1/k8l8cd/login.js?clientId=48747f98-027d-4c75-94a4-1d8bb687d9ee&amp;websiteId=461" async=""></script><script language="JavaScript" src="./FuncionesSysWeb.js.descarga"></script>
+    <script type="text/javascript" src="./jquery-3.6.0.js.descarga"></script>
+    <script type="text/javascript" src="./jquery-ui.min.js.descarga"></script>
+    <script type="text/javascript" src="./FuncionesSC.js.descarga"></script>
+    <link href="./jquery-ui2.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="./frmInicioWebPersona.js.descarga"></script>
+    <link href="./default(1).css" type="text/css" rel="stylesheet">
+
+    <script language="JavaScript" type="text/javascript">
+
+
+        function validarUsuario(e, maxL) {
+            if (maxL.maxLength > 100 || maxL.maxLength == -1)
+                return true;
+            tecla = (document.all) ? e.keyCode : e.which;
+            if (tecla == 8 || tecla == 9 || tecla == 16) return true;
+            if (tecla >= 65 && tecla <= 90) tecla = tecla + 32;
+            if (tecla >= 97 && tecla <= 122) return true;
+            if (tecla >= 48 && tecla <= 57) return true;
+            charVal = String.fromCharCode(tecla);
+            listCS = ".-_@";
+            if (listCS != "" && listCS.indexOf(charVal) >= 0) return true;
+            return false;
+        }
+
+        function validarClave(e, maxL) {
+
+            if (maxL.maxLength > 100 || maxL.maxLength == -1) {
+                clearErrorClave();
+            }
+            tecla = (document.all) ? e.keyCode : e.which;
+            if (tecla == 8 || tecla == 9 || tecla == 16 || tecla == 38
+                || tecla == 95 || tecla == 64 || tecla == 92 || tecla == 36
+                || tecla == 35 || tecla == 42) {
+                clearErrorClave();
+            }
+            
+            if (tecla >= 97 && tecla <= 122) {
+                clearErrorClave();
+
+            }
+            if (tecla >= 45 && tecla <= 57) {
+                clearErrorClave();
+            }
+            charVal = String.fromCharCode(tecla); 
+            listaBlancaClave = "&.-_@/\\$#*1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            if (listaBlancaClave != "" && listaBlancaClave.indexOf(charVal) >= 0) {
+                clearErrorClave();
+            } else {
+                if (document.getElementById('txtClave').value.length != maxL.maxLength) {
+                    document.getElementById('msgErrorClave').innerHTML = "Solo puede introducir letras min&#250;sculas, n&#250;meros y caracteres especiales &.-_@/\\$#*";
+                    return false;
+                } else {
+                    return false;
+                }
+            }
+        }
+
+        function clearErrorClave() {
+            document.getElementById('msgErrorClave').innerHTML = "";
+            return true;
+        }
+
+
+        function _doitvaluechange() {
+            var xShw = ['txtUsuario'];
+            var xVal = ['txtUsuario', 'txtClave'];
+            _securecode_prepare(xShw, xVal, null);
+        }
+        document.ondragstart = function () { return false };
+
+    </script>
+
+
+
+    <style>
+        .newLblLogin {
+            color: #4A4A50;
+            font-size: 14px;
+            text-decoration: none;
+        }
+		
+		@font-face {
+            font-family:'password';
+            font-style:normal;
+            font-weight:400;
+            src:url('../Productos/Styles/FONTS/password.ttf');
+        }
+        .fakePassword {
+            font-family:'password';
+            width:100px;
+            height:14px;
+        }
+        .fakePassword::placeholder {
+            font: 17px Assistant-Medium !important;
+        }
+		
+    </style>
+</head>
+<body style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;" class="body_login">
+    <form name="frmInicio" method="POST" action="https://www.baustroonline.com/frmInicioWebPersona.aspx?Permiso=524102521" id="frmInicio" onkeydown="KeyDownHandler(event);">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="ddlWYfgDL5QwvIOo1iA6I42kuERc4PUSbJlZXIDC7AFjKOn0mKu/bW12f01NKssPxU+lqRQYRPhJxZPPVyKIJ/e6FPD+GbBIptKRT2MuNYX3HvT2iuVOQ7bNKs/GVhdvEaDuQuxgV3BN6Q5NRK5WurOrm4Ba8FcSGCCmbG2FdUTHKaeet3mFgCARA3ETCxy6Kzch86ZemEZDyCdrIlJumKU+841R71b9wafmga9QsmU3A5IdkUMgi4Jayx+zCRMJ6CUPG+h+1IjNqar3ZLh6PenpegyViqrAp+TgDfpL8P1jySGU">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['frmInicio'];
+if (!theForm) {
+    theForm = document.frmInicio;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="AAF3EADE">
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="">
+</div>
+		
+        <input type="hidden" name="anticsrftoken" id="anticsrftoken" value="b735e703-ab2a-444a-9b1a-2874861d246f">
+        
+		<input type="hidden" name="userInfo" id="userInfo" value="b735e703-ab2a-444a-9b1a-2874861d246f">
+        <div id="divPrincipal" style="width: 100%; height: 310px;" overflow="hidden">
+            <table cellspacing="0" cellpadding="0" style="width: 100%; height: 310px;" class="clsFondo">
+                <tbody><tr align="center" valign="top">
+                    <td valign="top" align="center">
+                        <div id="divLogin" style="position: relative;">
+                            <table align="center" cellspacing="0" cellpadding="0" border="0" style="width: 30%; height: 265px; vertical-align: middle;">
+                                <tbody><tr>
+                                    <td style="height: 10px"></td>
+                                </tr>
+								<style>
+								  .MyTextBox::placeholder {
+									color:red;
+									color: #706f6f;
+									font-size: 14px;
+									text-align: center
+								  }
+								</style>
+                                <tr>
+                                    <td align="center">
+                                        <table cellspacing="0" cellpadding="0" border="0" width="280px;">
+
+                                            <tbody><tr>
+                                                <td align="left" width="130px">
+                                                    <span id="lblEtiUsuario" style="font-size: 12pt;"></span>
+                                                </td>
+                                            </tr>
+                                            <tr style="height: 2px;"></tr>
+                                            <tr>
+                                                <td align="left" valign="top" height="36px" style="">
+                                                    <input name="txtUsuario" type="text" maxlength="16" id="txtUsuario" title="Ingrese su nombre de usuario correctamente" class="ui-corner-all" placeholder="USUARIO" onkeypress="return validarUsuario(event,this)" onpaste="return false" onfocus="this.setAttribute(&#39;autocomplete&#39;,&#39;off&#39;);" autocomplete="off" style="width:50%;width: 350px; height: 32px; border: 1px solid #D5D5D5; padding: 10px; font-size: 14px; color: #706f6f; width: 100%; border-radius: 25px; -webkit-appearance: none; box-sizing: border-box; text-align: center">
+                                                </td>
+                                            </tr>
+                                            <tr style="height: 8px;"></tr>
+                                            <tr>
+                                                <td align="left" width="130px">
+                                                    <span id="lblEtiClave" style="font-size: 12pt;"></span>
+                                                </td>
+                                            </tr>
+                                            <tr style="height: 2px;"></tr>
+                                            <tr>
+                                                <td align="left" valign="top" height="36px" style="">
+                                                    <input name="txtClave" maxlength="16" id="txtClave" title="Ingrese su contraseña correctamente" class="ui-corner-all" type="password" onkeypress="return validarClave(event,this)" placeholder="CONTRASEÑA" autocomplete="off" onpaste="return false" style="width: 350px; height: 32px; border: 1px solid #D5D5D5; padding: 10px; font-size: 14px; color: #706f6f; width: 100%; border-radius: 25px; -webkit-appearance: none; box-sizing: border-box; text-align: center">
+                                                    <span id="msgErrorClave" style="font-size: small; color: indianred"></span>
+
+                                                </td>
+                                            </tr>
+
+                                            <tr align="center">
+                                                <td align="center" valign="top">
+                                                    <a id="btnIngresoLink" title="Ingresar al Sistema" class="ui-button ui-state-default" href="javascript:__doPostBack(&#39;btnIngresoLink&#39;,&#39;&#39;)" style="width: 100%; margin-top: 14px; border: 1px solid #1C2B4D; background: #1C2B4D; border-radius: 25px; ">
+                                                        <div style="text-align:center; padding:8px ;">
+                                                            <span class="ui-button-text" style="vertical-align:middle; font-weight:bold ;color:#F1B634; background:none;">INGRESAR</span> 
+                                                        </div>                                                 
+                                                    </a>
+                                                </td>
+                                            </tr>
+											
+											<tr align="center">
+                                                <td align="center" valign="top">
+                                                    <div style="text-align: center; margin-top: 30px; margin-bottom: 10px ;">
+														<a id="linkCambio" tabindex="3" class="newLblLogin" href="javascript:__doPostBack(&#39;linkCambio&#39;,&#39;&#39;)" style="vertical-align: middle; font-size: 15px; background-color: none; color: #F2F2F2; text-decoration:underline">Olvidé mi contraseña</a>
+													</div>
+                                                </td>
+                                            </tr>
+											
+											<tr align="center">
+                                                <td align="center" valign="top">
+                                                    <div style="text-align:center; padding:8px;">
+                                                        <a id="LinkNewUser" tabindex="3" class="newLblLogin" href="javascript:__doPostBack(&#39;LinkNewUser&#39;,&#39;&#39;)" style="vertical-align: middle;color:#F2F2F2;">CREAR MI USUARIO</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+											<tr align="center">
+                                                <td align="center" valign="top">
+                                                    <div style="text-align:center; padding:8px;">
+                                                        
+                                                    </div>
+                                                </td>
+                                            </tr>
+											
+											<tr align="center">
+                                                <td align="center" valign="top" style="background-color:#F1B634; height:1px">
+                                                </td>
+                                            </tr>
+
+                                            <tr align="center">
+                                                <td align="center" valign="top">
+                                                    <a id="btnDesvAustrotoken" title="Ingresar al Sistema" class="ui-button ui-state-default ui-corner-all" href="javascript:__doPostBack(&#39;btnDesvAustrotoken&#39;,&#39;&#39;)" style="width: 100%; margin-top: 5px; border: 0px solid #F2F2F2; border-radius: 25px; background: none;">
+                                                        <div style="text-align:center; padding:8px;">
+                                                            <span class="ui-button-text" style="vertical-align:middle; color:#F2F2F2; background:none;">DESVINCULAR AUSTROTOKEN</span> 
+                                                        </div>                                                 
+                                                    </a>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+											
+                                               
+                                                <td align="center" colspan="2">
+                                                    <div style="height: 10px"></div>
+                                                    
+												
+                                                    <div style="height: 10px"></div>
+                                                    
+                                                    <div style="height: 2px"></div>
+                                                    <div id="objtemp">
+                                                        <input type="hidden" name="objform" id="objform">
+                                                    </div>
+                                                    <div style="height: 2px"></div>                                                   
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+
+                                                </tr><tr>
+
+                                                   
+                                                    <td align="center" colspan="2">
+                                                        <div style="height: 4px"></div>
+                                                        <div style="text-align: center;">
+                                                            <!--<a id="linkIngUsrAntiguoAD" class="newLblLogin" href="javascript:__doPostBack(&#39;linkIngUsrAntiguoAD&#39;,&#39;&#39;)">Â¿Ingresaba con pasaporte?</a>-->
+                                                        </div>
+                                                        <div style="height: 15px"></div>
+                                                        <div style="text-align: center;">
+                                                            Recomendamos utilizar Chrome, Firefox.
+                                                        </div>
+
+                                                    </td>
+
+                                                </tr>
+                                        </tbody></table>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </div>
+                        <div id="divMsg" visible="True" style="font-size: 12px; display: none;" class="clsMsg" align="center">&nbsp;</div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+    </form>
+    <!--
+        INGRESA ARCHIVO EXTNERNO JAVASCRIPT 
+    -->
+
+<script src="./ca8001.js.descarga" type="text/javascript"></script>
+</body></html>
